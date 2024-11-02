@@ -41,3 +41,16 @@ def return_book(transaction_id):
         print("> Book returned")
     else:
         print("> Book not available for return")
+
+def get_transactions_by_member(member_id):
+    return session.query(Transaction).filter_by(member_id=member_id).all()
+
+def delete_book(book_id):
+    book = session.query(Book).filter_by(id = book_id).first()
+    if book and book.count>0:
+        # session.delete(book)
+        book.count = 0
+        session.commit()
+        print("> Book in stock deleted")
+    else:
+        print("> Book not in stock ",book_id)
