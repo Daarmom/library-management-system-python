@@ -19,7 +19,7 @@ def addNewMember():
     add_member(name, email)
     print("> New Member added....")
 
-def printBooks():
+def printMembers():
     members = get_member()
     for member in members:
         print(f"{member.id}: {member.name}  (Email: {member.email})")
@@ -42,7 +42,7 @@ def main():
     elif choice =="3":
         addNewMember()
     elif choice =="4":
-        pass
+        printMembers()
     elif choice =="5":
         pass
     elif choice =="6":
